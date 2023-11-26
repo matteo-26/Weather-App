@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1030d32312.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Weather app</title>
+</head>
+<body onload="startTime()">
+
+    <main class="main">
+        <div class="time">
+            <h1></h1>
+        </div>
+
+        <div class="center">
+            <div class="left">
+                
+            </div>
+
+            <div class="search">
+                <form method="POST" action="/search">
+                    <button type="submit" class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input type="text" name="city" placeholder="New York">
+                </form>
+            </div>
+
+            <div class="right">
+
+            </div>
+        </div>
+
+
+        <div class="copy">
+            <% if(locals.date) { %>
+                <h4><i class="fa-regular fa-copyright"></i> <%= date %></h4>
+            <% } %>
+        </div>
+    </main>
+
+<script src="./js/index.js"></script>
+</body>
+</html>

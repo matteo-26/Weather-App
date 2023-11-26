@@ -1,0 +1,115 @@
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+
+:root{
+    --bg: #0b121e;
+    --sec: #29374d;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'SF Pro Display', sans-serif;
+    background-color: var(--bg);
+}
+
+
+/* main */
+
+.main{
+    height: 100vh;
+
+}
+
+/* time */
+.time{
+    height: 15vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.time h1{
+    color: white;
+    background-color: var(--sec);
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+
+/* center */
+.center{
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left, .right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* search */
+
+.search{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input{
+    background-color: var(--sec);
+    font-family: 'SF Pro Display', sans-serif;
+    border: none;
+    color: white;
+    outline: none;
+    width: 300px;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 0px 10px 10px 0px;
+}
+
+form button{
+    background-color: var(--sec);
+    outline: none;
+    border: none;
+    padding: 11px;
+    border-radius: 10px 0px 0px 10px;
+}
+
+form button i{
+    font-size: 18px;
+    color: white;
+}
+
+
+
+/* copyright */
+
+.copy{
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.copy h4{
+    color: white;
+    background-color: var(--sec);
+    border-radius: 5px;
+    padding: 7px 12px;
+}
