@@ -38,25 +38,20 @@ app.post("/search", async (req, res) => {
 
 app.get("/result", async (req, res) => {
     var lat, lon;
-    var data = {};
+    
 
-    await axios.get(cordUrl, {
+    const response1 = await axios.get(cordUrl, {
         params: {
             q: city,
             limit: 1,
             appid: api_key,
         }
     })
-    .then(response => {
-        lat = response.data[0].lat;
-        lon = response.data[0].lon;
-    })
-    .catch(error => {
-        // Gestisci gli errori durante la richiesta
-        console.error('Errore nella richiesta API:', error.message);
-    });
+    
+    lat = response1.data[0].lat;
+    lon = response1.data[0].lon;
 
-    await axios.get(apiUrl, {
+    const response = await axios.get(apiUrl, {
         params: {
             lat: lat,
             lon: lon,
@@ -64,20 +59,17 @@ app.get("/result", async (req, res) => {
             appid: api_key,
         }
     })
-    .then(response => {
-        data = {
-            name: response.data.name,
-            weather: response.data.weather,
-            temp: response.data.main.temp,
-            feel: response.data.main.feels_like,
-            humidity: response.data.main.humidity
-        }
-    })
-    .catch(error => {
-        // Gestisci gli errori durante la richiesta
-        console.error('Errore nella richiesta API:', error.message);
-    });
+    
+    var data = {
+        name: response.data.name,
+        weather: response.data.weather,
+        temp: response.data.main.temp,
+        wind: response.data.wind.speed,
+        humidity: response.data.main.humidity
+    }
 
+
+    
 
     res.render("result.ejs", {
         data: data

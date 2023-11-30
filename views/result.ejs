@@ -3,9 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="https://kit.fontawesome.com/1030d32312.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles/result.css">
+    <title>Result</title>
 </head>
 <body>
+
+    <main class="main">
+        <div class="data">
+            <div class="main-data">
+                <div class="text">
+                    <% if(locals.data) { %>
+                        <h1> <%= data.name %> </h1>
+                        <h3> <%= data.weather[0].main %> </h3>
+                        <h5> <%= data.weather[0].description %> </h5>
+                    <% } %>
+                </div>
+                <div class="icon">
+                    <% if(locals.data) { %>
+                        <img src="http://openweathermap.org/img/wn/<%= data.weather[0].icon %>@4x.png">
+                    <% } %>
+                </div>
+            </div>
+            <div class="optional-data">
+                <h3>Additional Info:</h3>
+
+                <h5><i class="fa-solid fa-temperature-low"></i> Temperature </h5>
+                <p><%= data.temp %>°C</p>
+
+                <h5><i class="fa-solid fa-wind"></i> Wind Speed </h5>
+                <p><%= data.wind %>m/s</p>
+
+                <h5><i class="fa-solid fa-droplet"></i> Humidity </h5>
+                <p> <%= data.humidity %>%</p>
+                    
+                
+            </div>
+        </div>
+    </main>
+
     
 </body>
 </html>
